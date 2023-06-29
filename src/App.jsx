@@ -21,10 +21,11 @@ function useCatImage ({ fact }) {
   }, [fact])
 
   return { imageUrl }
-}
+} // { imageUrl: 'https:...'}
 
 const App = () => {
   const [fact, setFact] = useState('')
+  const { imageUrl } = useCatImage({ fact })
 
   useEffect(() => {
     getRandomFact().then(setFact)
